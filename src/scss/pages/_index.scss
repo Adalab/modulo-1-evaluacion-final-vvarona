@@ -33,19 +33,12 @@
   display: none;
 }
 
-@mixin color-weight-text($txt-trnf) {
-  color: $color-light;
-  font-family: $font-main;
-  font-weight: 600;
-  text-transform: $txt-trnf;
-}
-
 .hero-button {
-  @include hero-button();
+  @include button($color-light, $color-main);
 }
 
 .title, .benefits__title {
-  @include titles($color-main)
+  @include titles(center, $color-main)
 }
 //2nd section - benefits (must be grid)
 
@@ -55,12 +48,9 @@
   display: grid;
   grid-template-columns: 1;
   justify-items: center;
-  text-align: center;
 
   &__card {
-    color: $color-main;
-    font-family: $font-main;
-    font-size: 16px;
+    @include text(center, $color-main)
     padding: 0 58px;
     margin-top: 36px;
     &__title{
@@ -75,6 +65,45 @@
     margin-bottom: 42px
   }
   &__title {
-    @include titles($color-main);
+    @include titles(center, $color-main);
   }
+}
+
+//3rd section - shipping
+
+.shipping {
+  height: 100vh;
+  background-color: $color-secondary;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+
+  &-title {
+    @include titles(center,$color-light);
+  }
+  &-text {
+    @include text(center,$color-light);
+  }
+  &-button {
+    text-decoration: underline;
+    @include button($color-light, $color-secondary);
+    &:hover{
+      background-color: rgba(255, 255, 255, 0.071);
+    }
+  }
+  &-img {
+    height: 120px;
+  }
+}
+
+//4th section - image
+
+.image-section {
+  background: url('https://github.com/Adalab/modulo-1-evaluacion-final-vvarona/blob/main/docs/assets/images/creando-espacios.jpg?raw=true');
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
