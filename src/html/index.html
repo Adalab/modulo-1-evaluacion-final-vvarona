@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Open Spaces</title>
+    <script src="https://kit.fontawesome.com/42f94e8bfe.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"> 
@@ -12,42 +13,10 @@
   </head>
 
   <body>
-    <header>
-      <img src="./assets/images/logo.png" alt="Open Spaces Logo" title="Open Spaces Logo">
-      <nav class="nav">
-        <ul class="nav-list">
-          <li><a href="https://adalab.es/" target="_blank" rel="noopener noreferrer">Productos</a></li>
-          <li><a href="https://adalab.es/" target="_blank" rel="noopener noreferrer">Colecciones</a></li>
-          <li><a href="https://adalab.es/" target="_blank" rel="noopener noreferrer">Tienda</a></li>
-          <li><a href="https://adalab.es/" target="_blank" rel="noopener noreferrer">Inicio</a></li>
-        </ul>
-        <h1 class="title">Disfruta creando espacios</h1>
-        <button class="hero-button">Compra ahora</button>
-    </header>
+    <include src="./partials/header.html"></include>
 
     <main class="main">
-        <section class="benefits">
-          <h2 class="benefits-title">Volverse organizado se siente mejor con Open Spaces</h2>
-
-          <article class="benefits-card">
-            <img src="./assets/images/icon_1.png" alt="Lo que necesitas" class="benefit-images">
-            <h3 class="benefit-card-title">Lo que necesitas</h3>
-            <p class="benefit-card-text">Una línea de productos diseñados para todos tus espacios</p>
-          </article>
-
-          <article class="benefits-card">
-            <img src="./assets/images/icon_2.png" alt="Lo que necesitas" class="benefit-images">
-            <h3 class="benefit-card-title">Materias primas sustentables</h3>
-            <p class="benefit-card-text">Todos los productos con materias primas sustentables</p>
-          </article>
-
-          <article class="benefits-card">
-            <img src="./assets/images/icon_3.png" alt="Lo que necesitas" class="benefit-images">
-            <h3 class="benefit-card-title">Guia</h3>
-            <p class="benefit-card-text">Soporte y asesoramiento para ayudarte con tu objetivo</p>
-          </article>
-          
-        </section>
+       <include src="./partials/benefits.html"></include>
 
         <section class="shipping">
           <h2 class="shipping-title">Envío gratis garantizado</h2>
@@ -67,7 +36,7 @@
     </main>
 
     <footer class="footer">
-
+      <i class="fa-solid fa-arrow-up"></i>
       <div class="footer-store">
         <h4 class="footer-store-title">Tienda</h4>
         <ul>
@@ -77,7 +46,7 @@
           <li><a href="https://adalab.es/" target="_blank"">Habitaciones</a></li>
         </ul>
       </div>
-
+      
       <div class="footer-about">
         <h4 class="footer-about-title">Nosotros</h4>
         <ul>

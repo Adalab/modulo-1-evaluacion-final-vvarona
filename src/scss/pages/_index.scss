@@ -1,4 +1,80 @@
-.main__list {
-  padding-left: 2rem;
-  padding-bottom: 20px;
+//1st section - header (must be flex)
+.header {
+  height: 100vh;
+  width: 100%;
+  padding-top: 19px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:flex-start;
+  gap: 62px;
+  
+
+  background: url('https://raw.githubusercontent.com/Adalab/modulo-1-evaluacion-final-vvarona/aa52b4e53c41cc19608ebdf4e4c32e69e9292e80/src/images/header.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.os-logo {
+  width: 213x;
+}
+
+.fa-bars {
+  color: $color-main;
+  padding: 20px;
+  margin: 55px 0 0 33px;
+  position: fixed;
+  box-sizing: border-box;
+}
+
+.nav-list {
+  display: none;
+}
+
+@mixin color-weight-text($txt-trnf) {
+  color: $color-light;
+  font-family: $font-main;
+  font-weight: 600;
+  text-transform: $txt-trnf;
+}
+
+.hero-button {
+  @include hero-button();
+}
+
+.title, .benefits__title {
+  @include titles($color-main)
+}
+//2nd section - benefits (must be grid)
+
+.benefits {
+  background-color: $color-light;
+  padding: 41px 47px 18px 45px;
+  display: grid;
+  grid-template-columns: 1;
+  justify-items: center;
+  text-align: center;
+
+  &__card {
+    color: $color-main;
+    font-family: $font-main;
+    font-size: 16px;
+    padding: 0 58px;
+    margin-top: 36px;
+    &__title{
+      font-size: 20px;    
+    }
+    &__text{
+      margin: 6px;
+    }
+  }
+  &__images {
+    height: 100px;
+    margin-bottom: 42px
+  }
+  &__title {
+    @include titles($color-main);
+  }
 }

@@ -1,5 +1,6 @@
 // fonts
-$font-main: 'font-family: 'Poppins', sans-serif';
+
+$font-main: 'Poppins', sans-serif;
 
 // colors
 
@@ -9,3 +10,25 @@ $color-main: #0C474B;
 $color-footer-text: #b6c8c9;
 
 $color-secondary-light: #ffe0ce;
+
+@mixin titles($color) {
+    text-align: center;
+    font-family: $font-main;
+    font-weight: 600;
+    color: $color;
+    font-size: 24px;
+  }
+
+  @mixin hero-button {
+    text-transform: capitalize;
+    text-align: center;
+    color: $color-light;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: $color-main;
+    height: 48px;
+    width: 176px;
+    padding: 12px 24px;
+    border-radius: 3px;
+    border: none;
+  }
