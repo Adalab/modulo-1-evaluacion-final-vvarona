@@ -14,17 +14,22 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
-  
-  gap: 62px;  
+  flex-wrap: nowrap;
+ 
   position: relative;
 
   background: url('https://raw.githubusercontent.com/Adalab/modulo-1-evaluacion-final-vvarona/aa52b4e53c41cc19608ebdf4e4c32e69e9292e80/src/images/header.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-   
-    
+    &-conteiner {
+      height: 50vh;
+      width: 70vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      
+    }
     &-logo {
       width: 213px;
       padding: 50px 50px 50px 50px;
@@ -67,10 +72,10 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 62px;
+  gap: 30px;
   @media all and (min-width: 900px) {
     align-items: flex-start;
-    gap: 20px;
+    gap: 10px;
   }
   &-button {
     @include button($color-light, $color-main);
@@ -144,13 +149,11 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  @media all and (min-width: 900px) {
-    height: 50vh;
-  }
-
+  padding: 100px;
+  box-sizing: border-box;
+  
   &-title {
     @include titles(center,$color-light);
-    margin: 10px 0 ;
     @media all and (min-width: 900px) {
       font-size: 30px;
     }
@@ -171,10 +174,7 @@ html {
   &-button {
     text-decoration: underline;
     @include button($color-light, $color-secondary);
-    margin: 50px;
-    &:hover{
-      background-color: rgba(255, 255, 255, 0.071);
-    }
+    margin-top: 50px;
   }
   &-img {
     height: 120px;
@@ -185,10 +185,10 @@ html {
 
 .spaces{
   background-color: $color-light;
-   display: grid;
-   grid-template-columns: 1fr;
-   @media all and (min-width: 1728px) {
-    grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr;
+  @media all and (min-width: 1728px) {
+  grid-template-columns: 1fr 1fr;
   }
   &-section{
     height: 100vh;
