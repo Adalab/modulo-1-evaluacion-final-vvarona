@@ -15,7 +15,7 @@ $color-footer-text: #b6c8c9;
     text-align: $txt-align;
     font-family: $font-main;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 36px;
     color: $color;
   }
 
@@ -47,4 +47,32 @@ $color-footer-text: #b6c8c9;
     padding: 12px 24px;
     border-radius: 3px;
     border: none;
+
+    &:hover {
+      animation: boing 300ms ease-in-out;
+      color: #fff;
+      cursor: pointer;
+    }
+   
   }
+@keyframes boing {
+      15%, 40%, 75%, 100% {
+      transform-origin: center center;
+      }
+      15% {
+      transform: scale(1.2, 1.1);
+      }
+      40% {
+      transform: scale(0.95, 0.95);
+      }
+      75% {
+      transform: scale(1.05, 1);
+      }
+      100% {
+      transform: scale(1, 1);
+      }
+      }
+// Mediaqueries
+
+//   @media all and (min-width: 900px) { }
+//   @media all and (min-width: 1728px) { }

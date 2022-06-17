@@ -1,6 +1,9 @@
 //1st section - header (must be flex)
 html {
   scroll-behavior: smooth;
+}
+
+* {
   box-sizing: border-box;
 }
 
@@ -13,6 +16,7 @@ html {
   align-items: center;
   justify-content:center;
   gap: 62px;  
+  position: relative;
 
   background: url('https://raw.githubusercontent.com/Adalab/modulo-1-evaluacion-final-vvarona/aa52b4e53c41cc19608ebdf4e4c32e69e9292e80/src/images/header.jpg');
   background-size: cover;
@@ -22,7 +26,8 @@ html {
   &-logo {
     width: 213px;
     position: absolute;
-    
+    padding: 20px 50px 50px 50px;
+    top: 39px;
   }
   &-menu-icon {
     color: $color-main;
@@ -44,9 +49,16 @@ html {
 
 .nav-list {
   display: none;
+  list-style: none;
+  gap: 30px;
+  position: absolute;
+  top: 76px;
+  left: 280px;
+  & a {
+    @include text (center, $color-main)
+  }
   @media all and (min-width: 1728px) {
     display: flex;
-    @include text(center, $color-main)
   }
 }
 
@@ -58,20 +70,23 @@ html {
   gap: 62px;
   @media all and (min-width: 900px) {
     align-items: flex-start;
+    gap: 20px;
   }
   &-button {
     @include button($color-light, $color-main);
   }
 }
 
+.title {
+  @include titles(center, $color-main);
+  @media all and (min-width: 900px) {
+    width: 15ch;
+    text-align: left;
+  }
+}
 
-.title, .benefits__title {
-  @include titles(center, $color-main)
-}
 //2nd section - benefits (must be grid)
-.benefits__title-accent{
-  text-transform: uppercase;
-}
+
 .benefits {
   background-color: $color-light;
   padding: 41px 47px 18px 45px;
@@ -81,11 +96,17 @@ html {
   @media all and (min-width: 900px) {
     grid-template-columns: 1fr 1fr 1fr;
     padding: 50px 90px;
+    height: 50vh;
   }
   @media all and (min-width: 1728px) {
     padding: 70px 320px;
   }
-
+  &__title {
+  @include titles(center, $color-main)
+  }
+  &__title-accent{
+    text-transform: uppercase;
+  }
   &__card {
     @include text(center, $color-main);
     margin-top: 36px;
@@ -111,9 +132,8 @@ html {
     @media all and (min-width: 900px) {
       grid-column: span 3;
       width: 34ch;
+    }
   }
-  }
-  
 }
 
 //3rd section - shipping
@@ -160,7 +180,6 @@ html {
   &-img {
     height: 120px;
   }
-  
 }
 
 //4th section - spaces & image
@@ -274,7 +293,6 @@ html {
   &-socials {
     position: absolute;
     top: 110px;
-    
   }
 }
 
