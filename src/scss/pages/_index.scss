@@ -1,4 +1,8 @@
 //1st section - header (must be flex)
+html {
+  scroll-behavior: smooth;
+}
+
 .header {
   height: 100vh;
   width: 100%;
@@ -24,9 +28,13 @@
 .fa-bars {
   color: $color-main;
   padding: 20px;
-  margin: 55px 0 0 33px;
+  margin: 55px 33px;
   position: fixed;
   box-sizing: border-box;
+  &:hover {
+    opacity: 60%;
+    transform: scale(1.2);
+  }
 }
 
 .nav-list {
@@ -51,13 +59,17 @@
 
   &__card {
     @include text(center, $color-main);
-    padding: 0 58px;
     margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     &__title{
       font-size: 20px;    
     }
     &__text{
       margin: 6px;
+      height: 96px;
+      width: 208px;
     }
   }
   &__images {
@@ -111,6 +123,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 0 27px;
   }
   &-title{
     @include titles(center, $color-main);
@@ -136,18 +149,49 @@
 .footer {
   background-color: $color-main;
   display: flex;
-  flex-direction: column;
-  text-align: left;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 0;
+
+  &-conteiner {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    
+  }
+  & ul {
+    width: 208px;
+    height: 96px;
+    height: 130px;
+  }
+  & li {
+    list-style: none;
+  }
+  &-title {
+    @include footer-titles;
+    margin-bottom: 12px;
+  }
   & a {
     text-decoration: none;
-    color: $color-light;
-    
+        
+    @include text(left, $color-footer-text);
+    &:hover{
+      opacity: 70%;
+    }
   }
   &-arrow {
     color:$color-light;
-    position: absolute;
-    right: 28px;
-    bottom: 99%;
+    position: fixed;
+    bottom: 29;
+    right: 16;
+  }
+  &-text {
+    @include text(left, $color-footer-text);
   }
 }
 
+.social-icon {
+  color: $color-light;
+  font-size: 26px;
+  margin: 0 5.5px;
+}
