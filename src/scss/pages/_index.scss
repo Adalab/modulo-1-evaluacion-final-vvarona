@@ -1,68 +1,97 @@
 //1st section - header (must be flex)
 html {
   scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
 .header {
   height: 100vh;
   width: 100%;
-  padding-top: 19px;
-
+  
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content:flex-start;
-  gap: 62px;
-  
+  justify-content:center;
+  gap: 62px;  
 
   background: url('https://raw.githubusercontent.com/Adalab/modulo-1-evaluacion-final-vvarona/aa52b4e53c41cc19608ebdf4e4c32e69e9292e80/src/images/header.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-}
 
-.os-logo {
-  width: 213x;
-}
-
-.fa-bars {
-  color: $color-main;
-  padding: 20px;
-  margin: 55px 33px;
-  position: fixed;
-  box-sizing: border-box;
+  &-logo {
+    width: 213px;
+    position: absolute;
+    
+  }
+  &-menu-icon {
+    color: $color-main;
+    padding: 20px;
+    margin: 35px 0 0 13px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
   &:hover {
     opacity: 60%;
     transform: scale(1.2);
+    }
+    @media all and (min-width: 1728px) {
+      display: none;
+    }
   }
 }
 
 .nav-list {
   display: none;
+  @media all and (min-width: 1728px) {
+    display: flex;
+    @include text(center, $color-main)
+  }
 }
 
-.hero-button {
-  @include button($color-light, $color-main);
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 62px;
+  @media all and (min-width: 900px) {
+    align-items: flex-start;
+  }
+  &-button {
+    @include button($color-light, $color-main);
+  }
 }
+
 
 .title, .benefits__title {
   @include titles(center, $color-main)
 }
 //2nd section - benefits (must be grid)
-
+.benefits__title-accent{
+  text-transform: uppercase;
+}
 .benefits {
   background-color: $color-light;
   padding: 41px 47px 18px 45px;
   display: grid;
-  grid-template-columns: 1;
+  grid-template-columns: 1fr;
   justify-items: center;
+  @media all and (min-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 50px 90px;
+  }
+  @media all and (min-width: 1728px) {
+    padding: 70px 320px;
+  }
 
   &__card {
     @include text(center, $color-main);
     margin-top: 36px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
     &__title{
       font-size: 20px;    
     }
@@ -78,7 +107,12 @@ html {
   }
   &__title {
     @include titles(center, $color-main);
+    @media all and (min-width: 900px) {
+      grid-column: span 3;
+      width: 34ch;
   }
+  }
+  
 }
 
 //3rd section - shipping
@@ -94,9 +128,22 @@ html {
   &-title {
     @include titles(center,$color-light);
     margin: 10px 0 ;
+    @media all and (min-width: 900px) {
+      font-size: 30px;
+    }
+    @media all and (min-width: 1728px) {
+      font-size: 36px;
+    }
   }
   &-text {
     @include text(center,$color-light);
+    font-size: 14px;
+    @media all and (min-width: 900px) {
+    font-size: 14px;
+    }
+    @media all and (min-width: 1728px) {
+    font-size: 16px;
+    }
   }
   &-button {
     text-decoration: underline;
@@ -109,6 +156,7 @@ html {
   &-img {
     height: 120px;
   }
+  
 }
 
 //4th section - spaces & image
@@ -116,7 +164,10 @@ html {
 .spaces{
   background-color: $color-light;
    display: grid;
-   grid-template-columns: 1;
+   grid-template-columns: 1fr;
+   @media all and (min-width: 1728px) {
+    grid-template-columns: 1fr 1fr;
+  }
   &-section{
     height: 100vh;
     display: flex;
@@ -124,12 +175,32 @@ html {
     justify-content: center;
     align-items: center;
     padding: 0 27px;
+    @media all and (min-width: 1728px) {
+      align-items: flex-start;
+      margin-left: 12.5vw;
+    }
   }
   &-title{
     @include titles(center, $color-main);
+    @media all and (min-width: 900px) {
+      font-size: 30px;
+    }
+    @media all and (min-width: 1728px) {
+    }
   }
   &-text{
     @include text(center, $color-main);
+    margin: 6px;
+    height: 96px;
+    width: 360px;
+    font-size: 14px;
+    @media all and (min-width: 900px) {
+    font-size: 14px;
+    }
+    @media all and (min-width: 1728px) {
+    font-size: 16px;
+    text-align: left;
+    }
   }
   &-button{
     @include button($color-light, $color-main);
@@ -152,6 +223,7 @@ html {
   align-items: center;
   justify-content: center;
   padding: 56px 0;
+  position: relative;
 
   &-conteiner {
     display: flex;
@@ -181,9 +253,12 @@ html {
   }
   &-arrow {
     color:$color-light;
-    position: fixed;
-    bottom: 29;
-    right: 16;
+    position: relative;
+    padding: 20px;
+    margin: 0 16px 8px 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
   }
   &-text {
     @include text(left, $color-footer-text);
