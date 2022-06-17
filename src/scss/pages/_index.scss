@@ -50,7 +50,7 @@
   justify-items: center;
 
   &__card {
-    @include text(center, $color-main)
+    @include text(center, $color-main);
     padding: 0 58px;
     margin-top: 36px;
     &__title{
@@ -78,10 +78,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 18px;
 
   &-title {
     @include titles(center,$color-light);
+    margin: 10px 0 ;
   }
   &-text {
     @include text(center,$color-light);
@@ -89,6 +89,7 @@
   &-button {
     text-decoration: underline;
     @include button($color-light, $color-secondary);
+    margin: 5px;
     &:hover{
       background-color: rgba(255, 255, 255, 0.071);
     }
@@ -98,7 +99,29 @@
   }
 }
 
-//4th section - image
+//4th section - spaces & image
+
+.spaces{
+  background-color: $color-light;
+   display: grid;
+   grid-template-columns: 1;
+  &-section{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &-title{
+    @include titles(center, $color-main);
+  }
+  &-text{
+    @include text(center, $color-main);
+  }
+  &-button{
+    @include button($color-light, $color-main);
+  }
+}
 
 .image-section {
   background: url('https://github.com/Adalab/modulo-1-evaluacion-final-vvarona/blob/main/docs/assets/images/creando-espacios.jpg?raw=true');
@@ -107,3 +130,24 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+
+// Footer
+
+.footer {
+  background-color: $color-main;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  & a {
+    text-decoration: none;
+    color: $color-light;
+    
+  }
+  &-arrow {
+    color:$color-light;
+    position: absolute;
+    right: 28px;
+    bottom: 99%;
+  }
+}
+
