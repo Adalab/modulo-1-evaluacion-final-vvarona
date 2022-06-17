@@ -92,6 +92,7 @@ html {
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
+    align-self: start;
     &__title{
       font-size: 20px;    
     }
@@ -124,6 +125,9 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media all and (min-width: 900px) {
+    height: 50vh;
+  }
 
   &-title {
     @include titles(center,$color-light);
@@ -229,12 +233,13 @@ html {
     display: flex;
     flex-direction: column;
     align-items:flex-start;
-    
+    @media all and (min-width: 900px) {
+      flex-direction: row;
+    }
   }
   & ul {
     width: 208px;
-    height: 96px;
-    height: 130px;
+    height: 132px;
   }
   & li {
     list-style: none;
@@ -263,6 +268,14 @@ html {
   &-text {
     @include text(left, $color-footer-text);
   }
+  &-contact{
+    position: relative;
+  }
+  &-socials {
+    position: absolute;
+    top: 110px;
+    
+  }
 }
 
 .social-icon {
@@ -270,3 +283,4 @@ html {
   font-size: 26px;
   margin: 0 5.5px;
 }
+
