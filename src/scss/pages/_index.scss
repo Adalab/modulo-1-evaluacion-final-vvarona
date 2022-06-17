@@ -25,9 +25,8 @@ html {
 
     &-logo {
       width: 213px;
-      position: absolute;
       padding: 20px 50px 50px 50px;
-      top: 39px;
+      
     }
     &-menu-icon {
       color: $color-main;
@@ -44,6 +43,7 @@ html {
 
   @media all and (min-width: 900px) { 
     justify-content: flex-start;
+    align-items: flex-start;
   }    
   @media all and (min-width: 1728px) {
     display: none;
@@ -100,7 +100,6 @@ html {
   @media all and (min-width: 900px) {
     grid-template-columns: 1fr 1fr 1fr;
     padding: 50px 90px;
-    height: 50vh;
   }
   @media all and (min-width: 1728px) {
     padding: 70px 320px;
@@ -176,7 +175,7 @@ html {
   &-button {
     text-decoration: underline;
     @include button($color-light, $color-secondary);
-    margin: 5px;
+    margin: 50px;
     &:hover{
       background-color: rgba(255, 255, 255, 0.071);
     }
