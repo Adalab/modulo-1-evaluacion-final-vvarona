@@ -240,7 +240,7 @@ html {
 // Footer
 
 .footer {
-  background-color: $color-main;
+  background-color: $color-secondary;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -257,19 +257,19 @@ html {
   }
   & ul {
     width: 208px;
-    height: 132px;
+    margin-bottom: 45px;
   }
   & li {
     list-style: none;
   }
   &-title {
-    @include footer-titles;
+    @include titles (left, black);
     margin-bottom: 12px;
   }
   & a {
     text-decoration: none;
         
-    @include text(left, $color-footer-text);
+    @include text(left,  black);
     &:hover{
       opacity: 70%;
     }
@@ -286,8 +286,19 @@ html {
   &-text {
     @include text(left, $color-footer-text);
   }
+  
   &-contact{
     position: relative;
+    order: 0;
+    & .footer-title {
+      color: white;
+    }
+  }
+  &-store{
+    order: 1;
+  }
+  &-about{
+    order: 2;
   }
   &-socials {
     position: absolute;
